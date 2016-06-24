@@ -1,0 +1,17 @@
+private class EntryJ {
+    private int key;
+    private Object value;
+
+    public EntryJ(int key, Object value){
+        this.key = key;
+        this.value = value;
+    }
+    public int getKey() {
+        return key;
+    }
+
+    public E getValue() {
+        return value;
+    }
+
+}

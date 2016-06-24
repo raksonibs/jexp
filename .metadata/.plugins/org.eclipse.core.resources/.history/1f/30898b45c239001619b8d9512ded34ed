@@ -1,0 +1,9 @@
+
+
+public class PQ_Dictionary implements PriorityQueue {
+
+	public PQ_Dictionary() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

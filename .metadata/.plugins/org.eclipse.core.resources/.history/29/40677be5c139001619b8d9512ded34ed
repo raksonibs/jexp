@@ -1,0 +1,9 @@
+package a2a;
+
+public class PQ_Dictionary {
+
+	public PQ_Dictionary() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

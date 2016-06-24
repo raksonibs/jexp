@@ -50,7 +50,7 @@ public class VectorCompleteBinaryTree implements CompleteBinaryTree  {
   /** default constructor */
   public VectorCompleteBinaryTree() { 
     v = new Vector();
-    ((Object) v).insertAtRank(0,null); // the location at rank 0 is deliberately empty
+//    ((Object) v).insertAtRank(0,null); // the location at rank 0 is deliberately empty
   }
 
   /** Returns the number of (internal and external) nodes. */
@@ -107,14 +107,16 @@ public class VectorCompleteBinaryTree implements CompleteBinaryTree  {
   public Position right(Position p) 
     throws InvalidPositionException { 
     if (!hasRight(p)) throw new BoundaryViolationException("No right child");
-    return (Position)v.elemAtRank(2*((VectorNode) p).index() + 1);
+//    return (Position)v.elemAtRank(2*((VectorNode) p).index() + 1);
+    return p;
   }
 
   /** Returns the parent of p. */
   public Position parent(Position p) 
     throws InvalidPositionException, BoundaryViolationException { 
     if (isRoot(p)) throw new BoundaryViolationException("No parent");
-    return (Position)v.elemAtRank(((VectorNode) p).index() / 2);
+//    return (Position)v.elemAtRank(((VectorNode) p).index() / 2);
+    return p;
   }
 
   /** Replaces the element at v. */
