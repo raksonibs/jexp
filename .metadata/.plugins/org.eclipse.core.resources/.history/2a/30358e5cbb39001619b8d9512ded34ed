@@ -1,0 +1,17 @@
+package a2;
+
+public interface PriorityQueue<K,V> {
+	int size();
+	boolean isEmtpy();
+	Entry<K,V> insert(K key, V value) throws IllegalArgumentException;
+	Entry<K,V> min();
+	Entry<K,V>removeMin();
+	void add(Object e);
+	boolean contains(Object e);
+	int count(Object e);
+	Object remove(Object e);
+	void remove(Object e, int n);
+	void iterator();
+	int replaceKey(Object e, int n);
+	Object replaceValue(Object e, Object d);
+}

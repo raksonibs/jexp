@@ -1,0 +1,78 @@
+package assign1;
+/***********************************
+* EECS2011 - Assignment 1
+* File name: AQueue.java
+* Author: Oskar Niburski
+* Student Number: 212644944
+* Comments: 
+* 	Array list Advantages
+* 		simple index access and allows for simple shifting.
+* 	Array List Disadvantages
+* 		when using fixed size, problematic because list could be full. Using dynamic array, and the addDouble method provided below uses a much more dynamic way to add assumging one wants a dynmic array.
+* 	Linked List Advantages
+* 		
+* 	Linked List Disadvantages
+* NOTE: I assumed a simple array, however add for dynamic array is addDouble, assuming this was necessary
+************************************/
+public class AQueue<E> {
+	public static final int INIT_CAPACITY = 8;	// initial array capacity
+	protected int capacity;  // current capacity of the array
+	protected int front;     // index of the front element
+	protected int rear;      // index of the rear element
+	private E[] A;	    // array 
+	private int size = 0;
+	
+	public AQueue()      // constructor method
+	{
+		this(INIT_CAPACITY);
+		capacity = INIT_CAPACITY;
+		front = rear = 0;
+	}
+	
+	public AQueue(int capacity) {
+		A = (E[]) new Object[capacity];
+	}
+
+	public void printQueue( )
+	{
+		for ( int i = front; i != rear; i = (i+1) % capacity )
+			System.out.print( A[i] + " " );
+		System.out.println();
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	public boolean isEmpty() {
+		if (size() == 0) {
+			return true;
+		}  
+		
+		return false;
+	}
+	
+	public Object front() throws EmptyQueueException {
+		if (isEmpty()) {
+			throw new EmptyQueueException("Queue is empty.");
+		}
+
+		return A[front];
+	}
+	
+	public void enqueue(Object e) throws FullQueueException {
+		if (size == A.length) throw new FullQueueException("Queue is full");
+		int avail = (front + size) % A.length; // use modular arithmetic
+		A[avail] = (E) e;
+		size++;
+	}
+	
+	public Object dequeue() throws EmptyQueueException {
+		if (isEmpty()) return null;
+		E answer = A[front];
+		A[front] = null;
+		front = (front + 1) % A.length;
+		size--;
+		return answer;
+	}
+}

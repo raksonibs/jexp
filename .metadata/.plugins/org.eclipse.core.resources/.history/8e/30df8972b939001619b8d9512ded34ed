@@ -1,0 +1,6 @@
+package a2;
+
+public interface Entry<k, V> {
+	K getKey();
+	V getValue();
+}

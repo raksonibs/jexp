@@ -1,0 +1,9 @@
+package a2;
+
+public class CompleteBinaryTree {
+
+	public CompleteBinaryTree() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
