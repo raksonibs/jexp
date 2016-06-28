@@ -22,6 +22,12 @@ public class DNode<E> implements Position<E> {
   public void setNext(DNode<E> newNext) { next = newNext; }
   public void setPrev(DNode<E> newPrev) { previous = newPrev; }
   public void setElement(E newElement) { element = newElement; }
+
+@Override
+public E element() {
+	// TODO Auto-generated method stub
+	return element;
+}
   
   
 }

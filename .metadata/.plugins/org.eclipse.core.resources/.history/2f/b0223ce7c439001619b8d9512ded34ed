@@ -3,7 +3,7 @@
 import java.util.Iterator;
 /**
  * An interface for positional lists.
- * @author Roberto Tamassia, Michael Goodrich
+ * @author Oskar Niburski
  */
 //begin#fragment Header
 public interface PositionList<E> extends Iterable<E> {

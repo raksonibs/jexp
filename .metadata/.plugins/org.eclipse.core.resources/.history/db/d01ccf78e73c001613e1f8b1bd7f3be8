@@ -1,0 +1,7 @@
+package A2Q3;
+
+public class NonEmptyTreeException extends RuntimeException{
+	  public NonEmptyTreeException(String message) {
+	    super (message);
+	  }
+	}
