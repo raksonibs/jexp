@@ -1,81 +1,118 @@
+/**
+* PQ_Dictionary implementing PriorityQueue
+* @author Oskar Niburski
+*/
+import java.util.Comparator;
+
 public class PQ_Dictionary<K,V> implements PriorityQueue<K,V> {
-	private int size;
-	private int capacity = 5;
-    private Entry S[];
-	
-    /**
-	 * Constructor for pq dictionary
-	 * run time O(1)
-	 * @param
-	 * @return
-	 */
-	public PQ_Dictionary() {
-		// TODO Auto-generated constructor stub
-		S = new Entry[capacity];
-	    size = 0;
-	}
+	int size;
 
 	/**
-	 * Returns size of dictionary
-	 * O(1)
-	 * @param 
-	 * @return int x
-	 */
+	* Unsorted PQ Entry Node
+	* @author Oskar Niburski
+	*/
+	protected static class InnerEntry<K,V> implements Entry<K,V> { 
+		 private K k; // key
+		 private V v; // value
+		 public InnerEntry(K key, V value) {
+		 	k = key;
+		 	v = value;
+		 }
+	 // The Key and value
+		 public K getKey() { return k; }
+		 public V getValue() { return v; }
+	 
+	 } 
+	 private Comparator<K> comp;
+	 
+	 protected PQ_Dictionary(Comparator<K> c) { comp = c; }
+
+	 protected int compare(Entry<K,V> a, Entry<K,V> b) {
+	 	return comp.compare(a.getKey(), b.getKey()); }
+
+	 	protected boolean checkKey(K key) throws IllegalArgumentException {
+	 		try {
+	 return (comp.compare(key,key) == 0); // see if key can be compared to itself
+	} catch (ClassCastException e) {
+		throw new IllegalArgumentException("Wrong key");
+	} 
+}
+
+	private PositionalList<Entry<K,V>> list = new LinkedPositionalList<>();
+	/**
+* isEmpty()
+* Checks emptiness of queue
+* @param
+* @return boolean
+*/
+	public boolean isEmpty() { return size() == 0; }
+
+
+		/**
+* isEmpty()
+* Checks size of queue
+* @param
+* @return int
+*/
+	@Override
 	public int size() {
 		// TODO Auto-generated method stub
 		return size;
 	}
 
-	/**
-	 * Returns a boolean determining 
-	 * run time O(1)
-	 * @param
-	 * @return Entry x
-	 */
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return size == 0;
-	}
-
-	/**
-	 * run time O(1)
-	 * @param 
-	 * @return Entry x
-	 */
-	public Entry min() throws EmptyPriorityQueueException {
-		// TODO Auto-generated method stub
-		Entry tmp = (Entry) S[0];
-		return tmp;
-	}
-
-	/**
-	 * @param int key, Object value
-	 * @return Entry x
-	 */
-	public Entry insert(int key, Object value) throws InvalidKeyException {
-		S[key] = (Entry) value;
-		size++;
-		return (Entry) value;
-	}
-
-	/**
-	 * @param 
-	 * @return Entry x
-	 */
-	public Entry removeMin() throws EmptyPriorityQueueException {
-		// TODO Auto-generated method stub
-		size--;
-		Entry tmp = (Entry) S[0];
-		System.arraycopy( S, 1, S, 0, S.length );
-		return tmp;
-	}
-
+		/**
+* insert()
+* Adds entry to queue
+* @param K key, V value
+* @return Entry
+*/
 	@Override
 	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		S[(int) key] = (Entry) value;
-		size++;
-		return (Entry) value;
+		checkKey(key); 
+		Entry<K,V> newest = new InnerEntry<>(key, value); list.addLast(newest);
+		return newest;
 	}
+
+		/**
+* min()
+* Grabs smallest element
+* @param
+* @return Entry
+*/
+	@Override
+	public Entry<K, V> min() {
+		// TODO Auto-generated method stub
+		if (list.isEmpty()) return null;
+		return findMin().element();
+	}
+
+		/**
+* removeMin()
+* removes the smallest min
+* @param	
+* @return Entry
+*/
+	@Override
+	public Entry<K, V> removeMin() {
+		// TODO Auto-generated method stub
+		if (list.isEmpty()) return null;
+		return list.remove(findMin());
+	}
+	
+		/**
+* isEmpty()
+* findMin()
+* @param
+* @return Position entry!
+*/
+	private Position<Entry<K,V>> findMin() { 
+		Position<Entry<K,V>> small = list.first();
+		for (Position<Entry<K,V>> walk : list.positions())
+		if (compare(walk.element(), small.element()) < 0) {
+			small = walk; 
+		}
+	return small; 
+}
+
 
 }

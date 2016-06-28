@@ -1,5 +1,8 @@
 import java.util.Iterator;
-
+/**
+* Basic Iterator
+* @author Oskar Niburski
+*/
 public class ElementIterator<E> implements Iterator<E> {
 	
 	 protected PositionList<E> list; // the underlying list

@@ -9,6 +9,12 @@ public class LinkedTree<E> implements Tree<E> {
 		size = 0;
 	}
 
+		/**
+* root()
+* Grabs root
+* @param
+* @return Position<e>
+*/
 	@Override
 	public Position<E> root() throws EmptyTreeException {
 		if (root == null) {
@@ -18,6 +24,12 @@ public class LinkedTree<E> implements Tree<E> {
 		}
 	}
 
+		/**
+* finds parent()
+* grabs parent of position
+* @param Position<E> p
+* @return Position<E> element
+*/
 	public Position<E> parent(Position<E> p) throws IllegalArgumentException {
 
 		TreePosition<E> temp = checkPosition(p);
@@ -32,6 +44,12 @@ public class LinkedTree<E> implements Tree<E> {
 
 	}
 
+		/**
+* children()
+* reutrns children of element
+* @param Position<E> p
+* @return Iterable<Position<E>>
+*/
 	@Override
 	public Iterable<Position<E>> children(Position<E> p)
 			throws IllegalArgumentException {
@@ -45,11 +63,22 @@ public class LinkedTree<E> implements Tree<E> {
 		return (Iterable<Position<E>>) temp.getChildren();
 	}
 
+		/**
+* numChildren(P)
+* returns the number of children of p
+* @param Position<E> p
+* @return integer
+*/
 	@Override
 	public int numChildren(Position<E> p) throws IllegalArgumentException {
 		return 0;
 	}
-
+		/**
+* isInternal(P)
+* boolean check if Position<E> p is internal
+* @param Position<E> p
+* @return boolean
+*/
 	@Override
 	public boolean isInternal(Position<E> p) throws IllegalArgumentException {
 		if (isExternal(p) == true) {
@@ -59,6 +88,12 @@ public class LinkedTree<E> implements Tree<E> {
 		}
 	}
 
+		/**
+* isExternal(P)
+* returns boolean determining if is external node or not
+* @param Position<E> p
+* @return boolean
+*/
 	@Override
 	public boolean isExternal(Position<E> p) throws IllegalArgumentException {
 		TreePosition<E> temp = checkPosition(p);
@@ -69,6 +104,12 @@ public class LinkedTree<E> implements Tree<E> {
 		}
 	}
 
+		/**
+* isRoot(P)
+* returns boolean for root or not
+* @param Position<E> p
+* @return boolean
+*/
 	@Override
 	public boolean isRoot(Position<E> p) throws IllegalArgumentException {
 		TreePosition<E> temp = checkPosition(p);
@@ -79,11 +120,23 @@ public class LinkedTree<E> implements Tree<E> {
 		}
 	}
 
+		/**
+* side()
+* returns the size of Tree
+* @param 
+* @return integer
+*/
 	@Override
 	public int size() {
 		return size;
 	}
 
+		/**
+* isEmpty()
+* returns whether or not size is zero
+* @param 
+* @return boolean
+*/
 	@Override
 	public boolean isEmpty() {
 		if (size == 0) {

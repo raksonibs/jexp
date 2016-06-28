@@ -1,0 +1,41 @@
+public class PQ_Dictionary<K,V> implements PriorityQueue<K,V> {
+	private int size;
+	private int capacity = 5;
+    private Entry S[];
+    private PositionalList<Entry<K,V>> list = new PositionalList<>();
+    
+    public Entry<K,V> insert(K key, V value) throws IllegalArgumentException { 
+    	checkKey(key); // auxiliary key-checking method (could throw exception)
+    Entry<K,V> newest = new PQEntry<>(key, value); 
+    list.addLast(newest);
+    return newest;
+    }
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return size();
+	}
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return size == 0;
+	}
+	@Override
+	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Entry<K, V> min() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Entry<K, V> removeMin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+    
+
+}

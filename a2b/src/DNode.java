@@ -1,4 +1,7 @@
-//begin#fragment DNode
+/**
+* DNode for PositionalList
+* @author Oskar Niburski
+*/
 public class DNode<E> implements Position<E> {
   private DNode<E> prev, next;	// References to the nodes before and after
   private E element;	// Element stored in this position
