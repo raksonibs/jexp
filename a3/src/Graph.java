@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class Graph<T> implements GraphADT<T>
+public class Graph<V, E> implements GraphADT<V, E>
 {
    protected final int DEFAULT_CAPACITY = 10;
    protected int numVertices;   // number of vertices in the graph
    protected boolean[][] adjMatrix;   // adjacency matrix
-   protected T[] vertices;   // values of vertices
+   protected V[] vertices;   // values of vertices
 
    /******************************************************************
      Creates an empty graph.
@@ -14,7 +14,7 @@ public class Graph<T> implements GraphADT<T>
    {
       numVertices = 0;
       this.adjMatrix = new boolean[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
-      this.vertices = (T[])(new Object[DEFAULT_CAPACITY]);
+      this.vertices = (V[])(new Object[DEFAULT_CAPACITY]);
    }
 
    /******************************************************************
@@ -93,7 +93,7 @@ public class Graph<T> implements GraphADT<T>
    /******************************************************************
      Inserts an edge between two vertices of the graph.
    ******************************************************************/
-   public void addEdge (T vertex1, T vertex2)
+   public void addEdge (V vertex1, V vertex2)
    {
       addEdge (getIndex(vertex1), getIndex(vertex2));
    }
@@ -101,7 +101,7 @@ public class Graph<T> implements GraphADT<T>
    /******************************************************************
      Removes an edge between two vertices of the graph.
    ******************************************************************/
-   public void removeEdge (T vertex1, T vertex2)
+   public void removeEdge (V vertex1, V vertex2)
    {
       removeEdge (getIndex(vertex1), getIndex(vertex2));
    }
@@ -128,7 +128,7 @@ public class Graph<T> implements GraphADT<T>
      Adds a vertex to the graph, expanding the capacity of the graph
      if necessary.  It also associates an object with the vertex.
    ******************************************************************/
-   public void addVertex (T vertex)
+   public void addVertex (V vertex)
    {
       if (numVertices == vertices.length)
          expandCapacity();
@@ -168,7 +168,7 @@ public class Graph<T> implements GraphADT<T>
    /******************************************************************
      Removes a single vertex with the given value from the graph.  
    ******************************************************************/
-   public void removeVertex (T vertex)
+   public void removeVertex (V vertex)
    {
       for (int i = 0; i < numVertices; i++)
       {
@@ -186,7 +186,7 @@ public class Graph<T> implements GraphADT<T>
    ******************************************************************/
    protected void expandCapacity()
    {
-      T[] largerVertices = (T[])(new Object[vertices.length*2]);
+      V[] largerVertices = (V[])(new Object[vertices.length*2]);
       boolean[][] largerAdjMatrix = 
             new boolean[vertices.length*2][vertices.length*2];
 
@@ -224,7 +224,7 @@ public class Graph<T> implements GraphADT<T>
      Returns the index value of the first occurrence of the vertex.
      Returns -1 if the key is not found.
    ******************************************************************/
-   public int getIndex(T vertex)
+   public int getIndex(V vertex)
    {
       for (int i = 0; i < numVertices; i++)
          if (vertices[i].equals(vertex))
@@ -255,4 +255,118 @@ public class Graph<T> implements GraphADT<T>
       }
       return vertices;
    }
+
+@Override
+public int numVertices() {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int numEdges() {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public Iterable<Vertex> vertices() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Iterable<Edge> edges() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public V replace(Vertex p, V o) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public E replace(Edge p, E o) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Iterable<Edge> incidentEdges(Vertex v) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Vertex[] endVertices(Edge e) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Vertex opposite(Vertex v, Edge e) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public boolean areAdjacent(Vertex u, Vertex v) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public Vertex insertVertex(V o) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Edge insertEdge(Vertex u, Vertex v, E o) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public V removeVertex(Vertex v) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public E removeEdge(Edge e) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public E getEdge(Vertex p, Vertex o) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public int outDegree(Vertex p) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public int inDegree(Vertex p) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public Iterable<Edge> outgoingEdges(Vertex p) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Iterable<Edge> incomingEdges(Vertex p) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	return null;
+}
 }

@@ -23,6 +23,21 @@ public interface GraphADT<V, E> {
       returns the old element */
   public E replace(Edge p, E o) throws InvalidPositionException;
   
+  /** Gets edge */
+  public E getEdge(Vertex p, Vertex o) throws InvalidPositionException;
+  
+  /** Gets edge */
+  public int outDegree(Vertex p) throws InvalidPositionException;
+  
+  /** Gets edge */
+  public int inDegree(Vertex p) throws InvalidPositionException;
+  
+  /** Gets edge */
+  public Iterable<Edge> outgoingEdges(Vertex p) throws InvalidPositionException;
+  
+  /** Gets edge */
+  public Iterable<Edge> incomingEdges(Vertex p) throws InvalidPositionException;
+  
   /** Returns the edges incident on a vertex as an iterable collection */
   public Iterable<Edge> incidentEdges(Vertex v)
     throws InvalidPositionException;
