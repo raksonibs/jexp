@@ -4,8 +4,8 @@
 	<item value="/Users/oskarniburski/Downloads/jfreechart-1.0.19 2" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="Java SE 6 [1.6.0_65-b14-462]" key="org.eclipse.jdt.ui.last.selected.project.jre"/>
 	<item value="1" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
-	<item value="JavaSE-1.8" key="org.eclipse.jdt.ui.last.selected.execution.enviroment"/>
 	<item value="/Users/oskarniburski/Downloads/Sequences" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="JavaSE-1.8" key="org.eclipse.jdt.ui.last.selected.execution.enviroment"/>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
@@ -59,88 +59,88 @@
 		<section name="projects">
 			<section name="DateTest">
 				<item value="/Users/oskarniburski/Documents/workspace/DateTest/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/DateTest/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="test_project">
 				<item value="/Users/oskarniburski/Documents/workspace/test_project/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/test_project/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="RegexTest">
 				<item value="/Users/oskarniburski/Documents/workspace/RegexTest/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/RegexTest/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="bill">
 				<item value="/Users/oskarniburski/Documents/workspace/bill/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/bill/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Test_2">
 				<item value="/Users/oskarniburski/Documents/workspace/Test_2/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/Test_2/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Test_1">
 				<item value="/Users/oskarniburski/Documents/workspace/Test_1/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/Test_1/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="testy_2">
 				<item value="/Users/oskarniburski/Documents/workspace/testy_2/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/testy_2/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Debug">
 				<item value="/Users/oskarniburski/Documents/workspace/Debug/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/Debug/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="UnitConverter">
 				<item value="/Users/oskarniburski/Documents/workspace/UnitConverter/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/UnitConverter/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="unitKonverter">
 				<item value="/Users/oskarniburski/Documents/workspace/unitKonverter/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/unitKonverter/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="hello">
 				<item value="/Users/oskarniburski/Documents/workspace/hello/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/hello/javadoc.xml" key="antpath"/>
-			</section>
-			<section name="Test">
-				<item value="/Users/oskarniburski/Documents/workspace/Test/doc" key="destdir"/>
 				<item value="" key="href"/>
-				<item value="/Users/oskarniburski/Documents/workspace/Test/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="test1">
 				<item value="/Users/oskarniburski/Documents/workspace/test1/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/test1/javadoc.xml" key="antpath"/>
-			</section>
-			<section name="test-two">
-				<item value="/Users/oskarniburski/Documents/workspace/test-two/doc" key="destdir"/>
 				<item value="" key="href"/>
-				<item value="/Users/oskarniburski/Documents/workspace/test-two/javadoc.xml" key="antpath"/>
+			</section>
+			<section name="Test">
+				<item value="/Users/oskarniburski/Documents/workspace/Test/doc" key="destdir"/>
+				<item value="/Users/oskarniburski/Documents/workspace/Test/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="mmmm">
 				<item value="/Users/oskarniburski/Documents/workspace/mmmm/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/mmmm/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="test-two">
+				<item value="/Users/oskarniburski/Documents/workspace/test-two/doc" key="destdir"/>
+				<item value="/Users/oskarniburski/Documents/workspace/test-two/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="example2">
 				<item value="/Users/oskarniburski/Documents/workspace/example2/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/example2/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Person">
 				<item value="/Users/oskarniburski/Documents/workspace/Person/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/oskarniburski/Documents/workspace/Person/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 		</section>
 	</section>
@@ -151,8 +151,8 @@
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="54" key="DIALOG_Y_ORIGIN"/>
-			<item value="340" key="DIALOG_X_ORIGIN"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="340" key="DIALOG_X_ORIGIN"/>
 			<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 		</section>
 	</section>
@@ -161,8 +161,8 @@
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
 		<item value="350" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
-		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 		<item value="300" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
@@ -176,22 +176,22 @@
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="NewClassWizardPage">
+		<item value="false" key="create_constructor"/>
+		<item value="true" key="create_unimplemented"/>
+	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
-		<item value="*" key="patterns"/>
 		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
 		<item value="1" key="updateSimilarElementsMatchStrategy"/>
 		<item value="false" key="updateTextualMatches"/>
 		<item value="false" key="updateSimilarElements"/>
 	</section>
-	<section name="NewClassWizardPage">
-		<item value="true" key="create_constructor"/>
-		<item value="true" key="create_unimplemented"/>
-	</section>
 	<section name="JavadocWizardDialog">
 		<item value="600" key="DIALOG_WIDTH"/>
 		<item value="31" key="DIALOG_Y_ORIGIN"/>
-		<item value="534" key="DIALOG_HEIGHT"/>
 		<item value="20" key="DIALOG_X_ORIGIN"/>
+		<item value="534" key="DIALOG_HEIGHT"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

@@ -1,7 +1,11 @@
-// Suggested in the textbook.
+/**
+ * Signals that the boundaries of a data structure have been illegally
+ * traversed (e.g. past the end of a list).
+ * @author Oskar Niburski
+ */
 
-// A run-time exception for invalid positions
-public class BoundaryViolationException extends RuntimeException {
-  public BoundaryViolationException() { }
-  public BoundaryViolationException(String err) { super(err); }
+public class BoundaryViolationException  extends RuntimeException {
+  public BoundaryViolationException (String message) {
+    super (message);
+  }
 }

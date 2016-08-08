@@ -1,9 +1,0 @@
-package a2;
-
-public class VectorCompleteBinaryTree {
-
-	public VectorCompleteBinaryTree() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

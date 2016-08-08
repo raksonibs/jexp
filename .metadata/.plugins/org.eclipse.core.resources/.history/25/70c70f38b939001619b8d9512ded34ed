@@ -1,9 +1,0 @@
-package a2;
-
-public interface PriorityQueue<K,V> {
-
-	int
-	
-	public
-
-}

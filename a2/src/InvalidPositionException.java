@@ -1,7 +1,17 @@
-// Suggested in the textbook.
-
+/**
+ * Thrown when a position is determined to be invalid.
+ * @author Oskar Niburski
+ */
+//begin#fragment InvalidPositionException
 // A run-time exception for invalid positions
-public class InvalidPositionException extends RuntimeException {
-  public InvalidPositionException() { }
-  public InvalidPositionException(String err) { super(err); }
+public class InvalidPositionException extends RuntimeException {  
+  public InvalidPositionException(String err) {
+    super(err);
+  }
+//end#fragment InvalidPositionException
+  public InvalidPositionException() {
+    /* default constructor */
+  }
+//begin#fragment InvalidPositionException
 }
+//end#fragment InvalidPositionException

@@ -1,48 +1,28 @@
-// From the textbook.
+import java.util.Iterator;
 
 
-/**
- * An interface for a tree where nodes can have an arbitrary number of children.
- */
-import java.util.Iterator;  // conveniently makes "Iterator" refer to "java.util.Iterator"
+public interface Tree<E> extends Iterable<E> { 
 
-public interface Tree {
-  /** Returns the number of nodes in the tree. */
-  public int size();
+Position<E> root();
 
-  /** Returns whether the tree is empty. */
-  public boolean isEmpty();
+Position<E> parent(Position<E> p) throws IllegalArgumentException;
 
-  /** Return an iterator of the elements stored in the tree. */
-  public Iterator elements();
+Iterable<Position<E>> children(Position<E> p)
+		throws IllegalArgumentException;
 
-  /** Returns an iterator of the nodes stored in the tree. */
-  public Iterator positions();
+int numChildren(Position<E> p) throws IllegalArgumentException;
 
-  /** Replaces the element stored at a given node. */
-  public Object replace(Position v, Object e) 
-    throws InvalidPositionException;
+boolean isInternal(Position<E> p) throws IllegalArgumentException;
 
-  /** Returns the root of the tree. */
-  public Position root() throws EmptyTreeException;
+boolean isExternal(Position<E> p) throws IllegalArgumentException;
 
-  /** Returns the parent of a given node. */
-  public Position parent(Position v)
-    throws InvalidPositionException, BoundaryViolationException;
+boolean isRoot(Position<E> p) throws IllegalArgumentException; 
 
-  /** Returns an iterator of the children of a given node. */
-  public Iterator children(Position v) 
-    throws InvalidPositionException;
+int size();
 
-  /** Returns whether a given node is internal. */
-  public boolean isInternal(Position v) 
-    throws InvalidPositionException;
+boolean isEmpty(); 
 
-  /** Returns whether a given node is external. */
-  public boolean isExternal(Position v) 
-    throws InvalidPositionException;
+Iterator<E> iterator();
 
-  /** Returns whether a given node is the root of the tree. */
-  public boolean isRoot(Position v)
-    throws InvalidPositionException;
+Iterable<Position<E>> positions();
 }
