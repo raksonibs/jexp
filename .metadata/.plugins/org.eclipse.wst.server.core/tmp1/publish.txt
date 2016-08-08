@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Sun Jan 10 16:55:29 EST 2016
-org.eclipse.jst.jee.server\:StudentCalc12=/Users/oskarniburski/Downloads/apache-tomcat-7.0.34/wtpwebapps/StudentCalc12

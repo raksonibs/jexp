@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;PriorityQueue.java&apos; to &apos;a2/src/a2&apos;&#x0A;- Original project: &apos;assign1&apos;&#x0A;- Destination element: &apos;a2/src/a2&apos;&#x0A;- Original element: &apos;assign1.PriorityQueue.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=a2/src&lt;a2" element1="/src&lt;assign1{PriorityQueue.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1466737908692" units="1" version="1.0"/>
-</session>

@@ -6,6 +6,8 @@ public class Graph<V, E> implements GraphADT<V, E>
    protected int numVertices;   // number of vertices in the graph
    protected boolean[][] adjMatrix;   // adjacency matrix
    protected V[] vertices;   // values of vertices
+   protected V[] incomingVertices;
+   protected V[] outgoingVertices;
 
    /******************************************************************
      Creates an empty graph.
