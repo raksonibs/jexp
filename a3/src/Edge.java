@@ -1,18 +1,21 @@
 
-public class Edge {
-	private Object element;
-	private int positionIndex;
+public class Edge<E, V> {
+	private Object cost;
+	private Object from;
+	private Object to;
 	
 	public Edge() {
 		
 	}
 	
-	public Edge(Object e) {
-		this.element = e;
+	public Edge(V u, V v, E o) {
+		this.to = u;
+		this.from = v;
+		this.cost = o;
 	}
 	
-	public Object getElement() {
-		return this.element;
+	public Object getCost() {
+		return this.cost;
 	}
 	
 	
