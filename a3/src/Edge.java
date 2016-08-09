@@ -18,5 +18,13 @@ public class Edge<E, V> {
 		return this.cost;
 	}
 	
+	public Object getTo() {
+		return this.from;
+	}
+	
+	public Object getFrom() {
+		return this.to;
+	}
+	
 	
 }

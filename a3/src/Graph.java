@@ -21,6 +21,7 @@ public class Graph<V, E> implements GraphADT<V, E>
       numVertices = 0;
       numEdges = 0;
       this.vertices = new ArrayList<Integer>();
+      this.edges = new ArrayList<Edge>();
       ArrayList empty = new ArrayList<>();
       this.map =  new HashMap<V, ArrayList>();
       this.edgesMap =  new HashMap<E, ArrayList>();
@@ -65,43 +66,7 @@ public V vertices() {
 @Override
 public E edges() {
 	// TODO Auto-generated method stub
-	return (E) edgesMap.keySet();
-}
-
-@Override
-public V replace(Vertex p, V o) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public E replace(Edge p, E o) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public Iterable<Edge> incidentEdges(Vertex v) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public Vertex[] endVertices(Edge e) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public Vertex opposite(Vertex v, Edge e) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public boolean areAdjacent(Vertex u, Vertex v) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return false;
+	return (E) edges;
 }
 
 @Override
@@ -135,51 +100,95 @@ public Edge insertEdge(V u, V v, E o) throws InvalidPositionException {
 	verts.add(u);
 	verts.add(v);
 	Edge newEdge = new Edge(u,v, o);
-	edgesMap.put((E) newEdge, verts);
+	edges.add(newEdge);
 	this.numEdges += 1;
 	return newEdge;
 }
 
 @Override
-public V removeVertex(Vertex v) throws InvalidPositionException {
+public V removeVertex(V v) throws InvalidPositionException {
 	// TODO Auto-generated method stub
-	return null;
+	
+	if (!map.keySet().contains(v)) {
+		throw new InvalidPositionException("Not valid key!");
+	}
+	
+	ArrayList vertsEdges = map.get(v);
+	
+	 for ( Object edge : edges ) {
+		 if (((Edge) edge).getTo().equals(v)) {
+			 edges.remove(edge);
+		 }
+		 
+		 if (((Edge) edge).getFrom().equals(v)) {
+			 edges.remove(edge);
+		 }
+		 
+	 }
+	
+	
+	V removed = (V) map.remove(v);
+	this.numVertices -= 1;
+	return removed;
 }
 
 @Override
 public E removeEdge(Edge e) throws InvalidPositionException {
 	// TODO Auto-generated method stub
+//	edgesMap.remove(e);
+	for ( Object edge : edges ) {
+		 if (((Edge) edge).equals(e)) {
+			 edges.remove(edge);
+		 }
+	 }
+	
+	for ( V key : map.keySet() ) {
+		map.get(key).remove(e);
+	}
+	
+	this.numEdges -= 1;
+	return (E) e;
+}
+
+@Override
+public Edge getEdge(V p, V o) throws InvalidPositionException {
+	// TODO Auto-generated method stub
+	
+	for ( Object edge : edges ) {
+		if (((Edge) edge).getTo().equals(p) && ((Edge) edge).getFrom().equals(o)) {
+			 return (Edge) edge;
+		 }
+	 }
+	
 	return null;
 }
 
 @Override
-public E getEdge(Vertex p, Vertex o) throws InvalidPositionException {
+public int outgoingEdges(V p) throws InvalidPositionException {
 	// TODO Auto-generated method stub
-	return null;
+		if (!map.keySet().contains(p)) {
+			throw new InvalidPositionException("Not valid key!");
+		}
+		
+		return map.get(p).size();
 }
 
 @Override
-public int outDegree(Vertex p) throws InvalidPositionException {
+public int incomingEdges(V p) throws InvalidPositionException {
 	// TODO Auto-generated method stub
-	return 0;
-}
-
-@Override
-public int inDegree(Vertex p) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return 0;
-}
-
-@Override
-public Iterable<Edge> outgoingEdges(Vertex p) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public Iterable<Edge> incomingEdges(Vertex p) throws InvalidPositionException {
-	// TODO Auto-generated method stub
-	return null;
+	if (!map.keySet().contains(p)) {
+		throw new InvalidPositionException("Not valid key!");
+	}
+	
+	int count = 0;
+	
+	for ( Object edge : edges ) {
+		if (((Edge) edge).getTo().equals(p)) {
+			 count++;
+		 }
+	 }
+	
+	return count;
 }
 
 
