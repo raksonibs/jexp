@@ -11,6 +11,11 @@ public class Graph<V, E> implements GraphADT<V, E>
    protected ArrayList outgoingVertices;
    protected Map<V, ArrayList> map;
    protected Map<E, ArrayList> edgesMap;
+   
+   private Set<V> visitedNodes;
+   private Set<V> unvisitedNodes;
+   private Map<V, V> predecessors;
+   private Map<V, Integer> distance;
 
    /******************************************************************
      Creates an empty graph.
@@ -25,6 +30,9 @@ public class Graph<V, E> implements GraphADT<V, E>
       this.edgesMap =  new HashMap<E, ArrayList>();
    }
 
+   /******************************************************************
+   Number of vertices.
+ ******************************************************************/
 
 @Override
 public int numVertices() {
@@ -32,24 +40,36 @@ public int numVertices() {
 	return numVertices;
 }
 
+/******************************************************************
+Number of Edges.
+******************************************************************/
 @Override
 public int numEdges() {
 	// TODO Auto-generated method stub
 	return numEdges;
 }
 
+/******************************************************************
+Object array of vertices.
+******************************************************************/
 @Override
 public Object[] vertices() {
 	// TODO Auto-generated method stub
 	return map.keySet().toArray();
 }
 
+/******************************************************************
+ArrayList for edges.
+******************************************************************/
 @Override
 public ArrayList edges() {
 	// TODO Auto-generated method stub
 	return (ArrayList) edges;
 }
 
+/******************************************************************
+ToString method.
+******************************************************************/
 public String toString() {
 	String result = "";
 	 for ( Object edge : edges ) {
@@ -60,6 +80,9 @@ public String toString() {
 	 return result;
 }
 
+/******************************************************************
+Insert Vertix into map.
+******************************************************************/
 @Override
 public void insertVertex(V o) {
 	// TODO Auto-generated method stub
@@ -71,11 +94,17 @@ public void insertVertex(V o) {
     setNumVertices(v+1);
 }
 
+/******************************************************************
+Setter Method for num Vertices.
+******************************************************************/
 private void setNumVertices(int i) {
 	// TODO Auto-generated method stub
 	this.numVertices = i;
 }
 
+/******************************************************************
+Insert Edge into map and edges.
+******************************************************************/
 @Override
 public Edge insertEdge(V u, V v, E o) throws InvalidPositionException {
 //	should be edge object with vertices reference and cost
@@ -96,6 +125,9 @@ public Edge insertEdge(V u, V v, E o) throws InvalidPositionException {
 	return newEdge;
 }
 
+/******************************************************************
+Remove Vertex
+******************************************************************/
 @Override
 public V removeVertex(V v) throws InvalidPositionException {
 	// TODO Auto-generated method stub
@@ -124,6 +156,9 @@ public V removeVertex(V v) throws InvalidPositionException {
 	return removed;
 }
 
+/******************************************************************
+Remove Edge
+******************************************************************/
 @Override
 public E removeEdge(Edge e) throws InvalidPositionException {
 	// TODO Auto-generated method stub
@@ -159,6 +194,9 @@ public E removeEdge(Edge e) throws InvalidPositionException {
 	return (E) e;
 }
 
+/******************************************************************
+Get Edge
+******************************************************************/
 @Override
 public Edge getEdge(V p, V o) throws InvalidPositionException {
 	// TODO Auto-generated method stub
@@ -172,6 +210,9 @@ public Edge getEdge(V p, V o) throws InvalidPositionException {
 	return null;
 }
 
+/******************************************************************
+Out Degree (number of edges coming out of vertex)
+******************************************************************/
 @Override
 public int outDegree(V p) throws InvalidPositionException {
 	// TODO Auto-generated method stub
@@ -195,6 +236,9 @@ public int outDegree(V p) throws InvalidPositionException {
 	return count;
 }
 
+/******************************************************************
+In Degree (number of edges coming into vertex)
+******************************************************************/
 @Override
 public int inDegree(V p) throws InvalidPositionException {
 	// TODO Auto-generated method stub
@@ -218,6 +262,9 @@ public int inDegree(V p) throws InvalidPositionException {
 	return count;
 }
 
+/******************************************************************
+All outgoing edges
+******************************************************************/
 @Override
 public ArrayList outgoingEdges(V p) throws InvalidPositionException {
 	// TODO Auto-generated method stub
@@ -237,6 +284,107 @@ public ArrayList outgoingEdges(V p) throws InvalidPositionException {
 	
 	return outgoingEdges;
 	
+}
+
+/******************************************************************
+Dijkstra Algorthim for graph
+******************************************************************/
+public ArrayList DijkstraAlgorithm(V v, V u) {
+	
+	visitedNodes = new HashSet<V>();
+	unvisitedNodes = new HashSet<V>();
+	distance = new HashMap<V, Integer>();
+	predecessors = new HashMap<V, V>();
+	distance.put(v, 0);
+	
+	while (unvisitedNodes.size() > 0) {
+		V vertex = getMinimum(unvisitedNodes);
+		visitedNodes.add(vertex);
+		unvisitedNodes.remove(vertex);
+		findMinimalDistance(vertex);
+	}
+	
+	return outgoingEdges(v);
+}
+
+/******************************************************************
+Find smallest distance
+******************************************************************/
+private void findMinimalDistance(V vertex) {
+	// TODO Auto-generated method stub
+	ArrayList<V> adjacentNodes = getNeibhbours(vertex);
+	for (V target: adjacentNodes) {
+		if (getShortestDistance(target) > getShortestDistance(vertex) + getDistance(vertex, target)) {
+			distance.put(target,  getShortestDistance(vertex) + getDistance(vertex, target));
+			predecessors.put(target, vertex);
+			unvisitedNodes.add(target);
+		}
+	}
+	
+}
+
+/******************************************************************
+Shortest Distance to vertex
+******************************************************************/
+private int getShortestDistance(Object minimum) {
+	// TODO Auto-generated method stub
+	Integer d = distance.get(minimum);
+	if (d == null) {
+		return Integer.MAX_VALUE;
+	} else {
+		return d;
+	}
+}
+
+/******************************************************************
+Get Distance
+******************************************************************/
+private int getDistance(V vertex, V target) {
+	// TODO Auto-generated method stub
+	
+	for ( Object edge : edges ) {
+//		System.out.println(edge);
+		if (((Edge) edge).getTo().equals(target) && ((Edge) edge).getFrom().equals(vertex)) {
+			 return (int) ((Edge) edge).getCost();
+		 }
+	 }
+	
+	return 0;
+}
+
+/******************************************************************
+DGet all the neighbours to traverse in parallel to determine distance
+******************************************************************/
+private ArrayList<V> getNeibhbours(V vertex) {
+	// TODO Auto-generated method stub
+	ArrayList<V> neighbors = new ArrayList<V>();
+	
+	for ( Object edge : edges ) {
+		if (((Edge) edge).getFrom().equals(vertex) && !visitedNodes.contains(((Edge) edge).getTo())) {
+			neighbors.add((V) ((Edge) edge).getTo());
+		}
+	}
+	
+	return neighbors;
+}
+
+/******************************************************************
+Simple Minmium distance
+******************************************************************/
+private V getMinimum(Set<V> unvisitedNodes2) {
+	// TODO Auto-generated method stub
+	Object minimum = null;
+	for (Object vertex: unvisitedNodes2) {
+		if (minimum == null) {
+			minimum = vertex;
+		} else {
+			if (getShortestDistance(vertex) < getShortestDistance(minimum)) {
+				minimum = vertex;
+			}
+		}
+	}
+	
+	return null;
 }
 
 @Override
@@ -383,7 +531,11 @@ public static void main(String[] args){
         		}
         		System.out.println("All Connections from : " + s1);
         	} else {
-        		for (Object edge : graph2.outgoingEdges(splitString[1])) {
+//        		for (Object edge : graph2.outgoingEdges(splitString[1])) {
+//        			System.out.println(edge);
+//        		}
+        		ArrayList output = graph2.DijkstraAlgorithm(splitString[1], splitString[2]);
+        		for (Object edge : output) {
         			System.out.println(edge);
         		}
         		System.out.println("Shortest Path Between: " + s1);
