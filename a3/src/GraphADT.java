@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Set;
 
 /**
  * An interface for a graph.
@@ -12,19 +13,25 @@ public interface GraphADT<V, E> {
   public int numEdges();
   
   /** Returns the vertices of the graph as an iterable collection */
-  public V vertices();
+  public Object[] vertices();
   
   /** Returns the edges of the graph as an iterable collection */
-  public E edges();
+  public ArrayList edges();
   
   /** Gets edge */
   public Edge getEdge(V p, V o) throws InvalidPositionException;
   
   /** Gets edge */
-  public int outgoingEdges(V p) throws InvalidPositionException;
+  public int outDegree(V p) throws InvalidPositionException;
   
   /** Gets edge */
-  public int incomingEdges(V p) throws InvalidPositionException;
+  public int inDegree(V p) throws InvalidPositionException;
+  
+  public ArrayList outgoingEdges(V p) throws InvalidPositionException;
+  
+  /** Gets edge */
+  public ArrayList incomingEdges(V p) throws InvalidPositionException;
+  
   
   /** Inserts and return a new vertex with a given element */
   public void insertVertex(V o);

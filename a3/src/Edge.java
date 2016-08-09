@@ -9,8 +9,8 @@ public class Edge<E, V> {
 	}
 	
 	public Edge(V u, V v, E o) {
-		this.to = u;
-		this.from = v;
+		this.to = v;
+		this.from = u;
 		this.cost = o;
 	}
 	
@@ -19,11 +19,15 @@ public class Edge<E, V> {
 	}
 	
 	public Object getTo() {
-		return this.from;
+		return this.to;
 	}
 	
 	public Object getFrom() {
-		return this.to;
+		return this.from;
+	}
+	
+	public String toString() {
+		return "Edge: To: " + this.getTo() + " From: " + this.getFrom() + " Cost: " + this.getCost();
 	}
 	
 	
