@@ -263,79 +263,79 @@ public ArrayList incomingEdges(V p) throws InvalidPositionException {
 
 public static void main(String[] args){
 	Edge edgeToRemove = null;
-//	System.out.println("Starting Standard test");
-//    Graph graph = new Graph();
-//    graph.insertVertex("YYZ");
-//    System.out.println("Num Edges is zero: " + (graph.numEdges == 0));
-//    System.out.println("Num Vertices is 1: " + (graph.numVertices == 1));
-//    graph.insertVertex("JFK");
-//    graph.insertVertex("LAX");
-//    graph.insertVertex("WAR");
-//    graph.insertVertex("CAT");
-//    graph.insertVertex("DOG");
-//    System.out.println("Num Vertices is 6: " + (graph.numVertices == 6));
-//    System.out.println("Num Edges is zero: " + (graph.numEdges == 0));
-//    graph.insertEdge("DOG", "CAT", 3);
-//    System.out.println("Num Edges is 1: " + (graph.numEdges == 1)); 
-//    System.out.println("Num Vertices is 6: " + (graph.numVertices == 6));
-//    graph.insertEdge("DOG", "YYZ", 4);
-//    graph.insertEdge("DOG", "JFK", 2);
-//    graph.insertEdge("WAR", "JFK", 5);
-//    graph.insertEdge("LAX", "JFK", 5);
-//    graph.insertEdge("JFK", "LAX", 10);
-//    System.out.println("Num Edges is six: " + (graph.numEdges == 6));
-//    System.out.println("Num Vertices is six: " + (graph.numVertices == 6));
-//    
-//    for (Object edge : graph.edges()) {
-//		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
-//	}
-//    
-//    Object[] verts = graph.vertices();
-//    
-//    for (int i = 0; i < verts.length; i++) {
-//    	System.out.println("Vertix: " + verts[i]);
-//    }
-//    
-//    System.out.println("Num indegree is 0 for dog: " + (graph.inDegree("DOG") == 0));
-//    System.out.println("Num outdegree is 3 for dog: " + (graph.outDegree("DOG") == 3));
-//    
-//    System.out.println("Num indegree is 3 for jfk: " + (graph.inDegree("JFK") == 3));
-//    System.out.println("Num outdegree is 1 for jfk: " + (graph.outDegree("JFK") == 1));
-//    
-//    System.out.println("Incoming edges for JFK");
-//    System.out.println("Incoming edges should be DOG to JFK, LAX to JFK, WAR to JFK");
-//    for (Object edge : graph.incomingEdges("JFK")) {
-//		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
-//	}
-//    
-//    System.out.println("OutGOING edges for JFK");
-//    System.out.println("Outgoing edges should be JFK to LAX");
-//    for (Object edge : graph.outgoingEdges("JFK")) {
-//		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
-//	}
-//    
-//    edgeToRemove = new Edge("WAR", "JFK", 5, "plane");
-//    graph.removeEdge(edgeToRemove);
-//    System.out.println("Num Edges is five: " + (graph.numEdges == 5));
-//    System.out.println("Num Vertices is six: " + (graph.numVertices == 6));
-//    
-//    System.out.println("Incoming edges for JFK");
-//    System.out.println("Incoming edges should be DOG to JFK, LAX to JFK");
-//    for (Object edge : graph.incomingEdges("JFK")) {
-//		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
-//	}
-//    
-//    System.out.println("OutGOING edges for JFK");
-//    System.out.println("Outgoing edges should be JFK to LAX");
-//    for (Object edge : graph.outgoingEdges("JFK")) {
-//		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
-//	}
-//    
-//    graph.removeVertex("JFK");
-//    System.out.println("Num Edges is two: " + (graph.numEdges == 2));
-//    System.out.println("Num Vertices is 5: " + (graph.numVertices == 5));
-//    
-//    System.out.println("Done Standard test");
+	System.out.println("Starting Standard test");
+    Graph graph = new Graph();
+    graph.insertVertex("YYZ");
+    System.out.println("Num Edges is zero: " + (graph.numEdges == 0));
+    System.out.println("Num Vertices is 1: " + (graph.numVertices == 1));
+    graph.insertVertex("JFK");
+    graph.insertVertex("LAX");
+    graph.insertVertex("WAR");
+    graph.insertVertex("CAT");
+    graph.insertVertex("DOG");
+    System.out.println("Num Vertices is 6: " + (graph.numVertices == 6));
+    System.out.println("Num Edges is zero: " + (graph.numEdges == 0));
+    graph.insertEdge("DOG", "CAT", 3);
+    System.out.println("Num Edges is 1: " + (graph.numEdges == 1)); 
+    System.out.println("Num Vertices is 6: " + (graph.numVertices == 6));
+    graph.insertEdge("DOG", "YYZ", 4);
+    graph.insertEdge("DOG", "JFK", 2);
+    graph.insertEdge("WAR", "JFK", 5);
+    graph.insertEdge("LAX", "JFK", 5);
+    graph.insertEdge("JFK", "LAX", 10);
+    System.out.println("Num Edges is six: " + (graph.numEdges == 6));
+    System.out.println("Num Vertices is six: " + (graph.numVertices == 6));
+    
+    for (Object edge : graph.edges()) {
+		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
+	}
+    
+    Object[] verts = graph.vertices();
+    
+    for (int i = 0; i < verts.length; i++) {
+    	System.out.println("Vertix: " + verts[i]);
+    }
+    
+    System.out.println("Num indegree is 0 for dog: " + (graph.inDegree("DOG") == 0));
+    System.out.println("Num outdegree is 3 for dog: " + (graph.outDegree("DOG") == 3));
+    
+    System.out.println("Num indegree is 3 for jfk: " + (graph.inDegree("JFK") == 3));
+    System.out.println("Num outdegree is 1 for jfk: " + (graph.outDegree("JFK") == 1));
+    
+    System.out.println("Incoming edges for JFK");
+    System.out.println("Incoming edges should be DOG to JFK, LAX to JFK, WAR to JFK");
+    for (Object edge : graph.incomingEdges("JFK")) {
+		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
+	}
+    
+    System.out.println("OutGOING edges for JFK");
+    System.out.println("Outgoing edges should be JFK to LAX");
+    for (Object edge : graph.outgoingEdges("JFK")) {
+		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
+	}
+    
+    edgeToRemove = new Edge("WAR", "JFK", 5, "plane");
+    graph.removeEdge(edgeToRemove);
+    System.out.println("Num Edges is five: " + (graph.numEdges == 5));
+    System.out.println("Num Vertices is six: " + (graph.numVertices == 6));
+    
+    System.out.println("Incoming edges for JFK");
+    System.out.println("Incoming edges should be DOG to JFK, LAX to JFK");
+    for (Object edge : graph.incomingEdges("JFK")) {
+		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
+	}
+    
+    System.out.println("OutGOING edges for JFK");
+    System.out.println("Outgoing edges should be JFK to LAX");
+    for (Object edge : graph.outgoingEdges("JFK")) {
+		System.out.println("Edge: " + edge + " To: " + ((Edge) edge).getTo() + " From: " + ((Edge) edge).getFrom() + " Cost: " + ((Edge) edge).getCost());
+	}
+    
+    graph.removeVertex("JFK");
+    System.out.println("Num Edges is two: " + (graph.numEdges == 2));
+    System.out.println("Num Vertices is 5: " + (graph.numVertices == 5));
+    
+    System.out.println("Done Standard test");
     
     System.out.println("Starting AIRPLANE test");
     System.out.println("Please input some values, for example: + YYZ JFK 120 plane");
